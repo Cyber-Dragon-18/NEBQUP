@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NEBQUP — Núcleo de Bioquímica do Porto</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <div class="background"></div>
+
+  <header class="glass header">
+    <h1 class="logo">NEBQUP</h1>
+    <nav>
+      <ul class="nav">
+        <li><a href="#home">Início</a></li>
+        <li><a href="#about">Sobre</a></li>
+        <li><a href="#lab">Laboratório</a></li>
+        <li><a href="#events">Eventos</a></li>
+        <li><a href="#contact">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="home" class="hero">
+    <div class="glass hero-box">
+      <h2>Bioquímica do Futuro</h2>
+      <p>Exploramos ciência, tecnologia e inovação com criatividade e comunidade.</p>
+      <a href="#about" class="btn">Explorar</a>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <h2 class="title">Quem Somos</h2>
+    <p class="subtitle">Um núcleo moderno, científico e conectado.</p>
+
+    <div class="about-grid">
+      <div class="glass about-card">
+        <h3>Inovação</h3>
+        <p>Promovemos ciência com novas metodologias, tecnologia e pensamento crítico.</p>
+      </div>
+      <div class="glass about-card">
+        <h3>Investigação</h3>
+        <p>Workshops, experiências e sessões práticas com temas de Bioquímica.</p>
+      </div>
+      <div class="glass about-card">
+        <h3>Comunidade</h3>
+        <p>Trabalhamos juntos para desenvolver o curso e apoiar os estudantes.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="lab" class="section alt">
+    <h2 class="title">Laboratório Digital</h2>
+
+    <div class="lab-grid">
+      <div class="glass lab-card">
+        <h3>Simulações</h3>
+        <p>Ferramentas digitais para explorar conceitos bioquímicos.</p>
+      </div>
+      <div class="glass lab-card">
+        <h3>Modelação 3D</h3>
+        <p>Estruturas moleculares renderizadas para estudo e visualização.</p>
+      </div>
+      <div class="glass lab-card">
+        <h3>Protocolos</h3>
+        <p>Documentação para técnicas laboratoriais e práticas.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="events" class="section">
+    <h2 class="title">Proximos Eventos</h2>
+    <p class="subtitle">Fica a par do que está a acontecer.</p>
+    <div id="events-list" class="events-grid"></div>
+  </section>
+
+  <section id="contact" class="section alt">
+    <h2 class="title">Fala Connosco</h2>
+    <form id="contact-form" class="glass contact-form">
+      <input type="text" name="name" placeholder="Nome" required />
+      <input type="email" name="email" placeholder="Email" required />
+      <textarea name="message" placeholder="Mensagem" required></textarea>
+      <button class="btn" type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <footer class="footer glass">
+    <p>© <span id="year"></span> NEBioQ — Núcleo de Estudantes de Bioquímica</p>
+  </footer>
+</body>
+</html>
