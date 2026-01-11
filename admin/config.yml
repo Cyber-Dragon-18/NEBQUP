@@ -46,11 +46,9 @@ collections:
           - label: "Eventos"
             name: "events"
             widget: "list"
-            summary: "{{fields.title}}"
+            summary: "{{fields.title}} — {{fields.date}}"
             fields:
               - { label: "Título", name: "title", widget: "string" }
-              - { label: "Data", name: "date", widget: "string" }
+              - { label: "Data", name: "date", widget: "datetime", time_format: false }
               - { label: "Imagem", name: "image", widget: "image", required: false }
-
-
-
+              - { label: "Descrição", name: "description", widget: "text", required: false }

@@ -1,10 +1,62 @@
 <!doctype html>
-<html>
+<html lang="pt">
   <head>
     <meta charset="utf-8" />
     <title>Content Manager</title>
   </head>
   <body>
+    <!-- Decap CMS core -->
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+
+    <script>
+      // Use Preact helpers from Decap
+      const h = window.h || preact.h;
+      const createClass = window.createClass || React.createClass;
+
+      // Preview for the "events" collection (file with events.json)
+      const EventsPreview = createClass({
+        render() {
+          // data.events is the list widget field in your config.yml
+          const data = this.props.entry.getIn(["data", "events"]) || [];
+          const events = data.toJS ? data.toJS() : [];
+
+          return h(
+            "div",
+            { className: "events-preview-grid" },
+            events.map((ev, index) =>
+              h("div", { className: "event-preview-card", key: index }, [
+                ev.image &&
+                  h("img", {
+                    className: "event-preview-image",
+                    src: this.props.getAsset(ev.image),
+                    alt: ev.title || ""
+                  }),
+                h(
+                  "h3",
+                  { className: "event-preview-title" },
+                  ev.title || "Sem título"
+                ),
+                ev.date &&
+                  h(
+                    "p",
+                    { className: "event-preview-date" },
+                    "Data: " + ev.date
+                  ),
+                ev.description &&
+                  h(
+                    "p",
+                    { className: "event-preview-description" },
+                    ev.description
+                  )
+              ])
+            )
+          );
+        }
+      });
+
+      // Register preview and styles
+      CMS.registerPreviewTemplate("events", EventsPreview);
+      CMS.registerPreviewStyle("/admin/preview.css");
+    </script>
   </body>
 </html>
