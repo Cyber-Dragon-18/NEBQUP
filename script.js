@@ -11,17 +11,19 @@ fetch('events.json')
     if (!eventsList) return;
 
     const events = data.events || [];
-    eventsList.innerHTML = '';
-
     events.forEach(ev => {
       const card = document.createElement("div");
       card.className = "glass event-card";
+
       card.innerHTML = `
+        ${ev.image ? `<img class="event-image" src="${ev.image}" alt="${ev.title}">` : ""}
         <h3>${ev.title}</h3>
         <p><strong>Data:</strong> ${ev.date}</p>
       `;
+
       eventsList.appendChild(card);
     });
+
   })
   .catch(err => console.error('Erro a carregar events.json', err));
 

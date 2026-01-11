@@ -50,6 +50,7 @@ collections:
             fields:
               - { label: "Título", name: "title", widget: "string" }
               - { label: "Data", name: "date", widget: "string" }
-              - { label: "Imagem", name: "image", widget: "image" }
+              - { label: "Imagem", name: "image", widget: "image", required: false }
+
 
 
