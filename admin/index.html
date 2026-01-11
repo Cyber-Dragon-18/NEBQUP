@@ -5,21 +5,14 @@
     <title>Content Manager</title>
   </head>
   <body>
-    <!-- Load Decap CMS -->
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
-    <!-- Load js-yaml to parse YAML -->
     <script src="https://unpkg.com/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
-
     <script>
-      // Fetch config from /admin/config.yml instead of /config.yml
       fetch('/admin/config.yml')
-        .then((res) => res.text())
-        .then((text) => {
-          const yamlConfig = jsyaml.load(text);
-          window.CMS.init({ config: yamlConfig });
-        })
-        .catch((err) => {
-          console.error('Erro a carregar config.yml', err);
+        .then(res => res.text())
+        .then(text => {
+          const cfg = jsyaml.load(text);
+          window.CMS.init({ config: cfg });
         });
     </script>
   </body>
